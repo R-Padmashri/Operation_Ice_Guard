@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Operation Ice Guard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Health bars -->
+  <img id="healthBarBefore" src="assets/healthbar/healthbar_3.png" class="health-bar hidden">
+  <img id="healthBarAfter" src="assets/healthbar/healthbar_5.png" class="health-bar hidden">
+
+  <!-- Black screens for transitions -->
+  <div id="black-screen"></div>
+  <div id="blackout"></div>
+
+  <!-- Intro Scene -->
+  <div id="intro">
+    <img src="assets/characters/penguin_final.png" id="penguin-intro" />
+    <img src="assets/additional/ice_portal.png" id="portal-intro" />
+    <div id="dialog-container-intro">
+      <img src="assets/additional/dialogbox.png" id="dialog-box-intro" />
+      <p id="dialog-text-intro" style="transition: opacity 0.5s; opacity: 1;"></p>
+    </div>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <img src="assets/interactive_items/start_button.png" id="start-btn" alt="Start Button" />
+  </div>
+
+  <!-- Raccoon Scene -->
+  <div id="raccoon-scene">
+    <div id="overlay" class="hidden">
+      <div id="popupDialog">
+        <p class="popup-title">Ready to start mission?</p>
+        <p class="popup-subtitle">Help raccoon rejuvenate his land.</p>
+        <div id="inventoryItems">
+          <img src="assets/inventory/fertilizer.png" alt="Fertilizer" class="inventory-item" data-item="fertilizer" />
+          <img src="assets/inventory/manure.png" alt="Compost" class="inventory-item" data-item="compost" />
+          <img src="assets/inventory/fishnet.png" alt="Fishing Net" class="inventory-item" data-item="fishingnet" />
+        </div>
+      </div>
+    </div>
+
+    <div id="raccoon-scene-content">
+      <img id="bg" src="assets/background/soil_pollution_bg.png" alt="Soil Pollution Background" />
+      <img id="healthbar0" src="assets/healthbar/healthbar_0.png" alt="Inventory" />
+      <img id="bg2" src="assets/background/farmland_bg.png" alt="Healthy Soil" class="hidden" />
+      <img id="portal-raccoon" src="assets/additional/portal_entry.png" alt="Portal" />
+      <img id="penguin-raccoon" src="assets/characters/penguin_final.png" alt="Penguin" />
+      <img id="raccoon" src="assets/characters/raccoon_evil.png" alt="Raccoon" />
+      <img id="raccoonfinal" src="assets/characters/raccoon_final.png" alt="Good Raccoon" class="hidden final-character" />
+      <img id="penguinfinal" src="assets/characters/penguin_final.png" alt="Penguin Final" class="hidden final-character" />
+      <img id="finalPortal" src="assets/additional/portal_entry.png" alt="Final Portal" class="final-portal hidden" />
+      <img id="healthbar3" src="assets/healthbar/healthbar_3.png" alt="Healthbar Final" class="hidden" />
+      <div id="penguinBubble" class="speech-bubble hidden"></div>
+      <div id="raccoonBubble" class="speech-bubble hidden"></div>
+    </div>
+  </div>
+
+  <!-- Ripple Scene -->
+  <div id="ripple-scene">
+    <div id="background-container">
+      <img id="dirty-bg" src="assets/background/dirty_waterside_bg.png" alt="A polluted waterside scene" />
+      <img id="clean-bg" src="assets/background/clean_waterside_bg.png" alt="A clean waterside scene" />
+    </div>
+
+    <img id="portal" src="assets/additional/portal_entry.png" alt="A swirling portal" />
+    <img id="penguin" src="assets/characters/penguin_final.png" alt="A penguin character" />
+
+    <img id="froggy-evil" src="assets/characters/froggy_evil.png" class="frog" alt="A grumpy frog" />
+    <img id="froggy-final" src="assets/characters/froggy_final.png" class="frog" alt="A happy frog" />
+    <img id="duck" src="assets/characters/duck.png" alt="Duck" class="hidden" />
+
+    <div id="item-container"></div>
+
+    <div id="penguinBubble-ripple" class="ripple-speech-bubble hidden">
+      <span class="bubble-text"></span>
+    </div>
+    <div id="frogBubble-ripple" class="ripple-speech-bubble hidden">
+      <span class="bubble-text"></span>
+    </div>
+
+    <div id="overlay-ripple" class="hidden">
+      <div id="popupDialog-ripple">
+        <p class="popup-title">Ready to start the mission?</p>
+        <p class="popup-subtitle">Help Ripple clean the river by picking up the waste!</p>
+        <div id="inventoryItems-ripple">
+          <img src="assets/inventory/fertilizer.png" alt="Fertilizer" class="inventory-item" data-item="fertilizer" />
+          <img src="assets/inventory/manure.png" alt="Manure" class="inventory-item" data-item="manure" />
+          <img src="assets/inventory/fishnet.png" alt="Fish Net" class="inventory-item" data-item="fishnet" />
+        </div>
+      </div>
+    </div>
+
+    <div id="infoBox">
+      <h2>Time to Reflect</h2>
+      <h3>Ripple realizes:</h3>
+      <ul>
+        <li>His trashy habits are harming the pond and his friends</li>
+        <li>Polluting the water makes it unlivable, even for his own family</li>
+        <li>Clean water brings back life, joy and balance!</li>
+      </ul>
+      <h3>Ripple decides:</h3>
+      <ul>
+        <li>To stop dumping waste into the pond and compost snack scraps instead</li>
+        <li>To keep his pond clean and teach others how to protect it too</li>
+        <li>To turn his shop into a zero-waste, eco-froggy hangout</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Outro Scene -->
+  <div id="outro">
+    <img src="assets/characters/penguin_final.png" id="penguin-outro" />
+    <img src="assets/additional/ice_portal.png" id="portal-outro" />
+    <div id="dialog-container">
+      <img src="assets/additional/dialogbox.png" id="dialog-box-outro" />
+      <p id="dialog-text-outro" style="transition: opacity 0.5s; opacity: 1;"></p>
+    </div>
+    <div id="end-screen"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
